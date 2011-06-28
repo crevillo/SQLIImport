@@ -16,4 +16,8 @@ Functions[]=SQLIImportajax
 PermissionPrFunction=enabled
 File=extension/sqliimport/classes/sqliimportserverfunctions.php
 
+[ezjscServer_SQLIImport]
+Class=SQLIImportFunctions
+File=extension/sqliimport/classes/sqliimportfunctions.php
+
 */ ?>
