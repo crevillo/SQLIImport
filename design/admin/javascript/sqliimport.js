@@ -57,8 +57,7 @@ var browse = function(){
             ok: {
                 text: 'Ok',
                 className: 'defaultbutton',
-                click: function() {
-                    
+                click: function() {                    
                     $(this).dialog( 'close' );
                 }
             },
@@ -74,7 +73,7 @@ var browse = function(){
 
     this.open = function() {
         this.container.dialog( 'open' );
-        this.initializeTable();   
+        this.initializeTable();
            
     }
     

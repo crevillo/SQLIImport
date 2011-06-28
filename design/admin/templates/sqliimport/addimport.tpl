@@ -1,4 +1,4 @@
-{ezscript_require( array( 'sqliimport.js', 'jquery.dataTables.min.js', 'sqliimport::jqueryui' ) )}
+{ezscript_require( array( 'sqliimport.js', 'jquery.dataTables.min.js', 'SQLIImport::jqueryui' ) )}
 {ezcss_require( 'sqliimport.css' )}
 {literal}
 <script type="text/javascript">
