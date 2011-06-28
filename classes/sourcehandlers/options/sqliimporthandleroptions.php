@@ -79,7 +79,7 @@ class SQLIImportHandlerOptions extends SQLIImportOptions
         $text = '';
         foreach( $this->properties as $optionName => $optionValue )
         {
-            $text .= $optionName.'='.$optionValue."\n";
+            $text .= $optionName . '=' . $optionValue . "\n";
         }
         
         $text = trim( $text );
