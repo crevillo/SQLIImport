@@ -1,5 +1,5 @@
 {ezscript_require( array( 'sqliimport.js', 'jquery.dataTables.min.js', 'SQLIImport::jqueryui' ) )}
-{ezcss_require( 'sqliimport.css' )}
+{ezcss_require( array( 'sqliimport.css', 'jquery-ui-1.8.6.custom.css' ) )}
 {literal}
 <script type="text/javascript">
 var destinationBrowseURL = {/literal}{'sqliimport/browse'|ezurl}{literal}; 
