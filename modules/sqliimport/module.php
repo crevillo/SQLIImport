@@ -36,7 +36,8 @@ $ViewList['addimport'] = array(
     'script'                    =>  'addimport.php',
     'params'                    =>  array(),
     'unordered_params'          =>  array(),
-    'single_post_actions'       =>  array( 'RequestImportButton' => 'RequestImport' ),
+    'single_post_actions'       =>  array( 'RequestImportButton' => 'RequestImport',
+                                           'DestinationBrowse' => 'BrowseDestination' ),
     'post_action_parameters'    =>  array( 'RequestImport' => array(
                                                 'ImportHandler'     => 'ImportHandler',
                                                 'ImportOptions'     => 'ImportOptions'
@@ -87,6 +88,16 @@ $ViewList['alterimport'] = array(
 
 $ViewList['purgelist'] = array(
     'script'                    =>  'purgelist.php',
+    'params'                    =>  array(),
+    'unordered_params'          =>  array(),
+    'single_post_actions'       =>  array(),
+    'post_action_parameters'    =>  array(),
+    'default_navigation_part'   => 'sqliimportnavigationpart',
+    'functions'                 => array( 'manageimports' )
+);
+
+$ViewList['browse'] = array(
+    'script'                    =>  'browse.php',
     'params'                    =>  array(),
     'unordered_params'          =>  array(),
     'single_post_actions'       =>  array(),
