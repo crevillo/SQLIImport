@@ -1,3 +1,11 @@
+{ezscript_require( array( 'sqliimport.js', 'jquery.plugin-0810.02-min.js', 'jquery.dataTables.min.js', 'sqlimport::jqueryui' ) )}
+{ezcss_require( 'sqliimport.css' )}
+{literal}
+<script type="text/javascript">
+var destinationBrowseURL = {/literal}{'sqliimport/browse'|ezurl}{literal}; 
+var queryURL = {/literal}{'SQLIImportajax::query::1'|ezurl}{literal};
+</script>
+{/literal}
 {if is_set( $error_message )}
 <div class="message-error">
     <h2>{'Input did not validate'|i18n( 'design/admin/settings' )}</h2>
@@ -25,29 +33,28 @@
     <div class="box-ml">
         <div class="box-mr">
             <div class="box-content">
-                <table class="list cache block" cellspacing="0" style="margin:0;">
-                    <tr class="bglight">
-                        <th>{'Import handler'|i18n( 'extension/sqliimport' )}</th>
-                        <td>
+                <div class="block">
                             <select name="ImportHandler" id="ImportHandler">
                             {foreach $importHandlers as $handlerName => $handler}
                                <option value="{$handler}">{$handlerName}</option>
                             {/foreach}
                             </select>
-                        </td>
-                    </tr>
-                    <tr class="bgdark">
-                        <td><strong>{'Options (facultative)'|i18n( 'extension/sqliimport' )}</strong></th> 
-                        <td>
-                            <textarea name="ImportOptions" id="ImportOptions" rows="7" cols="70"></textarea>
-                            <p><i>{'One option per line : optionName=optionValue'|i18n( 'extension/sqliimport' )}</i></p>
-                        </td>
-                    </tr>
-                </table>
+                </div>
+                <div id="handlerconfig"></div>
+                <div class="box-header">
+                    <div class="box-ml">
+                        <h2 class="context-title">{'Options (facultative)'|i18n( 'extension/sqliimport' )}</h2>
+                    </div>
+                </div>
+                <div>
+                <div class="block">
+                    <textarea name="ImportOptions" id="ImportOptions" rows="7" cols="70" readonly="yes">{$importoptions}</textarea>      
+                </div>
                 {* DESIGN: Content END *}
             </div>
         </div>
     </div>
+    
                             
     {* Buttons. *}
     <div class="controlbar">
@@ -59,7 +66,7 @@
                         <div class="box-bl">
                             <div class="box-br">
                                 <div class="block">
-                                    <input class="button" type="submit" name="RequestImportButton" value="{'Request a new immediate import'|i18n( 'extension/sqliimport' )}" />
+                                    <input class="button" type="submit" id="RequestImportButton" name="RequestImportButton" value="{'Request a new immediate import'|i18n( 'extension/sqliimport' )}" />
                                 </div>
                             {* DESIGN: Control bar END *}
                             </div>
