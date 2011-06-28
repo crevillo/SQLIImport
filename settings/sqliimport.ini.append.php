@@ -2,6 +2,7 @@
 
 [ImportSettings]
 AvailableSourceHandlers[]=rssimporthandler
+AvailableSourceHandlers[]=wordpressimporthandler
 
 [rssimporthandler-HandlerSettings]
 # Indicates if handler is enabled or not. Mandatory. Must be "true" or "false"
@@ -18,5 +19,15 @@ DefaultParentNodeID=43
 StreamTimeout=
 # Below you can add your own settings for your source handler
 RSSFeed=http://www.lolart.net/rss/feed/blog
+
+[wordpressimporthandler-HandlerSettings]
+Enabled=true
+Name=WordPress
+ClassName=WordPressImportHandler
+WordPressFile=extension/sqliimport/samples/wordpress.xml
+DefaultParentNodeID=2
+BlogClass=blog
+PostClass=blog_post
+CommentClass=comment
 
 */ ?>
