@@ -120,9 +120,9 @@ var browse = function(){
         });
 
         $( "#sqliimport-top-menu a").bind( 'click', function( e ) {
-                e.preventDefault();
-                oTable.fnSettings().sAjaxSource = $(this).attr( 'href' );
-                oTable.fnDraw();
+            e.preventDefault();
+            oTable.fnSettings().sAjaxSource = $(this).attr( 'href' );
+            oTable.fnDraw();
         });   
     }
 };
