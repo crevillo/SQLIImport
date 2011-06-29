@@ -58,10 +58,13 @@ var browse = function( property, currentValue ){
             // actual value for the param we want to change
             // so we can check the related input radio on table callback
             $( "#sqliimport-browse-current-value" ).val( currentValue );
+            $( "#sqliimport-browse-new-value" ).val( currentValue );
             $( "#sqliimport-browse-property" ).val( property );
+            
         },
         close: function( event, ui ){
            oTable.fnDestroy();
+           browseDialog.container.remove();
         },      
         buttons: {
             ok: {
@@ -70,6 +73,11 @@ var browse = function( property, currentValue ){
                 click: function() {
                     // set de new value
                     u.setProperty( $( "#sqliimport-browse-property" ).val(), $( "#sqliimport-browse-new-value" ).val(), settings );
+                    // also set the value in the hidden related field
+                    // this will trigger the ajax call to show the seletected path
+                    $( $( "#sqliimport-browse-property" ).val() + '-value' ).val( $( "#sqliimport-browse-new-value" ).val() );
+                    $( '#' + $("#sqliimport-browse-property" ).val() + '-value' ).val( $( "#sqliimport-browse-new-value" ).val() );
+                    $( '#' + $("#sqliimport-browse-property" ).val() + '-value' ).change();
                     // update the textarea
                     s.updateSettings( u.tostring( settings ) );
                     $(this).dialog( 'close' );
@@ -89,8 +97,6 @@ var browse = function( property, currentValue ){
         this.container.dialog( 'open' );
         this.initializeTable();           
     }
-    
-    this.oTable = null;
 
     this.initializeTable = function() {
         var currentNodeID = $("#CurrentNodeID");
@@ -175,6 +181,13 @@ var sqliimport = function(){
                 browseDialog.open();
                 loading.hide();
             });        
+        });
+
+        $('.browse-hidden-value' ).change( function() {
+            var id = $(this).attr( 'id' );
+            jQuery.ez( 'SQLIImportajax::getnodepath::' + $(this).val(), false, function( data ) {
+                $( '#' + id.split('-')[0] + '-text' ).val( data.content );
+            });
         });
     };       
     

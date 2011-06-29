@@ -122,7 +122,7 @@ class SQLIImportServerFunctions extends ezjscServerFunctions
         );
     }
 
-    public static function getPath( $img )
+    private static function getPath( $img )
     {
         $operator = new eZURLOperator();
         $tpl = eZTemplate::instance();
@@ -135,6 +135,17 @@ class SQLIImportServerFunctions extends ezjscServerFunctions
 
         $operator->modify( $tpl, $operatorName, $operatorParameters, '', '', $operatorValue, $namedParameters );
         return $operatorValue;
+    }
+    
+    /**
+     * get path identification string for the given node
+     *
+     * @param $args array ( 0 => node_id )
+     * @return string
+     */
+    public static function getnodepath( $args )
+    {
+        return eZContentObjectTreeNode::fetch( (int) $args[0] )->attribute( 'path_identification_string' );
     }
   
 }

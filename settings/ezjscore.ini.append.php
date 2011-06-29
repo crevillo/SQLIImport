@@ -9,6 +9,7 @@ Packer=disabled
 FunctionList[]=SQLIImportajax_settings
 FunctionList[]=SQLIImportajax_dialog
 FunctionList[]=SQLIImportajax_query
+FunctionList[]=SQLIImportajax_getnodepath
 
 [ezjscServer_SQLIImportajax]
 Class=SQLIImportServerFunctions
