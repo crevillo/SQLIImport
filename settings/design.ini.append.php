@@ -3,5 +3,4 @@
 [ExtensionSettings]
 DesignExtensions[]=sqliimport
 
-*/
-?>
+*/ ?>

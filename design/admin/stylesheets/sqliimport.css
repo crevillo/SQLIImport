@@ -57,6 +57,7 @@
 {
     color: #D0D0D0;
 }
+
 .paging_full_numbers span
 {
     display: block;
@@ -64,6 +65,7 @@
     margin-right: 2px;
     cursor: pointer;
 }
+
 .paging_full_numbers span.first,
 .paging_full_numbers span.previous,
 .paging_full_numbers span.next,
@@ -73,6 +75,7 @@
     padding: 2px; 
     border: 1px solid #ccc;
 }
+
 .paging_full_numbers span span
 {
     display: block;
@@ -81,7 +84,6 @@
     padding: 3px 0; 
     border: none;
 }
-
 
 .loading
 {
