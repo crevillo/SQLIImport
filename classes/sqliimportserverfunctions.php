@@ -35,7 +35,7 @@ class SQLIImportServerFunctions extends ezjscServerFunctions
                     $options[$key] = $val;
                 }
             }
-
+            $tpl->setVariable( 'importoptions_array', $options );
             $SQLIImportOptions = new SQLIImportHandlerOptions( $options );
 
             return array( 
