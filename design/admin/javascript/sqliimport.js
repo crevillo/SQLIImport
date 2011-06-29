@@ -146,7 +146,7 @@ var sqliimport = function(){
         this.bind( handlerConfig, browse );
     };
 
-    this.bind = function( obj, context ) {
+    this.bind = function( obj ) {
         $('.browse', obj).bind( 'click', function(e) {
             e.preventDefault();
             var loading = $( $(this).attr( 'id' ).split('-')[0] + '-loading' );
