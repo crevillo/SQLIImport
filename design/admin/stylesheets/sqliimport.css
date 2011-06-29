@@ -80,3 +80,8 @@
 {
     display: none;
 }
+
+.ui-widget
+{
+    font-size: 0.9em;
+}
