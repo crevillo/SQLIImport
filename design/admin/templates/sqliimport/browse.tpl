@@ -36,7 +36,8 @@
     </tbody>
 </table>
 </div>
-<input type="hidden" name="CurrentNodeID" id="CurrentNodeID" value="{$node_id}" />
-<input type="hidden" name="SelectedNodeID" id="SelectedNodeID" value="" />
+<input type="hidden" name="CurrentValue" id="sqliimport-browse-current-value" value="{$node_id}" />
+<input type="hidden" name="CurrentValue" id="sqliimport-browse-property" value="" />
+<input type="hidden" name="SelectedNodeID" id="sqliimport-browse-new-value" value="" />
 </form>
 {/default}
