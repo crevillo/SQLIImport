@@ -26,6 +26,7 @@ Name=WordPress
 ClassName=WordPressImportHandler
 WordPressFile=extension/sqliimport/samples/wordpress.xml
 DefaultParentNodeID=2
+DefaultUserCreatorID=14
 BlogClass=blog
 PostClass=blog_post
 CommentClass=comment
